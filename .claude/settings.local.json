@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(npm run *)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(curl -s http://localhost:3000 -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s http://localhost:3000/courses/a1 -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s http://localhost:3000/courses/a1/lessons/1 -o /dev/null -w \"%{http_code}\")",
+      "Bash(cat /tmp/nextjs-dev.log | grep -iE \"error|warning|failed|cannot\" | head -30)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx tsc *)",
+      "Read(//Users/fereshte/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.5.0/.claude/skills/ui-ux-pro-max/**)",
+      "Bash(python3 scripts/search.py \"online course education elearning language learning premium trustworthy\" --design-system -p \"German Learning Platform\")",
+      "Bash(python3 scripts/search.py \"adult professional language learning saas premium minimal trustworthy\" --design-system -p \"German Learning Platform\")",
+      "Bash(python3 scripts/search.py \"hero social-proof conversion premium education\" --domain landing)",
+      "Bash(python3 scripts/search.py \"professional elegant premium education trustworthy\" --domain typography)",
+      "Bash(curl -s http://localhost:3000/courses/a2/lessons/1)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/login)",
+      "Bash(curl -s http://localhost:3000/ http://localhost:3000/login http://localhost:3000/blog)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/courses)",
+      "Bash(kill 4316)",
+      "Bash(kill -9 4316)",
+      "Bash(kill -9 4515)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
