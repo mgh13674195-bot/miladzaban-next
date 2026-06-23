@@ -15,7 +15,7 @@ export default function PdfSection({ lesson }: { lesson: A2Lesson }) {
         <div className="flex flex-col sm:flex-row items-center gap-4 bg-cream rounded-2xl p-5">
           <div className="text-5xl">📑</div>
           <div className="flex-1 text-center sm:text-right">
-            <p className="font-bold mb-1">{lesson.title}</p>
+            <p className="de font-bold mb-1">{lesson.title}</p>
             <p className="text-ink-soft text-sm mb-3">خلاصه، لغات کلیدی و تمرین‌های درس به همراه جدول صرف فعل.</p>
             <a
               href={lesson.pdfUrl}

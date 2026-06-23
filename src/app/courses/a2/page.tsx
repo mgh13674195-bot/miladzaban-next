@@ -94,8 +94,8 @@ export default function A2CoursePage() {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {a2Part1.map((lesson, i) => (
-                  <A2LessonCard key={lesson.id} lesson={lesson} index={i} />
+                {a2Part1.map((lesson) => (
+                  <A2LessonCard key={lesson.id} lesson={lesson} />
                 ))}
               </div>
             </div>
@@ -112,8 +112,8 @@ export default function A2CoursePage() {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {a2Part2.map((lesson, i) => (
-                  <A2LessonCard key={lesson.id} lesson={lesson} index={i} />
+                {a2Part2.map((lesson) => (
+                  <A2LessonCard key={lesson.id} lesson={lesson} />
                 ))}
               </div>
             </div>

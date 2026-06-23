@@ -7,7 +7,7 @@ function toPersianDigits(n: number) {
   return String(n).replace(/[0-9]/g, (d) => PERSIAN_DIGITS[Number(d)])
 }
 
-export default function A2LessonCard({ lesson, index }: { lesson: A2Lesson; index: number }) {
+export default function A2LessonCard({ lesson }: { lesson: A2Lesson }) {
   const coursebookCount = lesson.lessonVideos.length
   const workbookCount = lesson.workbookVideos.length
 
@@ -16,14 +16,15 @@ export default function A2LessonCard({ lesson, index }: { lesson: A2Lesson; inde
       href={`/courses/a2/lessons/${lesson.id}`}
       className="flex items-center gap-4 p-4 rounded-2xl border border-line bg-white hover:border-primary hover:shadow-md hover:-translate-y-0.5 cursor-pointer transition-all group"
     >
-      {/* Number badge */}
+      {/* Number badge — uses the lesson's real global id, not the filtered array index */}
       <div className="w-10 h-10 rounded-xl grid place-items-center text-sm font-black flex-shrink-0 bg-primary/10 text-primary">
-        {index + 1}
+        {lesson.id}
       </div>
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <p className="font-bold text-sm truncate">{lesson.title}</p>
+        <span className="badge badge-gray text-[10px] px-2 py-0.5 mb-1 inline-block">{lesson.topic}</span>
+        <p className="de font-bold text-sm truncate">{lesson.title}</p>
         <p className="text-xs text-ink-soft mt-0.5">
           {lesson.duration} · {toPersianDigits(coursebookCount)} ویدیوی کتاب درسی + {toPersianDigits(workbookCount)} ویدیوی کتاب کار
         </p>

@@ -20,7 +20,7 @@ export default function LessonNavigation({
           </svg>
           <div className="min-w-0">
             <p className="text-[11px] text-ink-soft mb-0.5">درس قبلی</p>
-            <p className="text-sm font-bold truncate">{prev.title}</p>
+            <p className="de text-sm font-bold truncate">{prev.title}</p>
           </div>
         </Link>
       ) : <div className="flex-1" />}
@@ -32,7 +32,7 @@ export default function LessonNavigation({
         >
           <div className="min-w-0 text-left">
             <p className="text-[11px] text-ink-soft mb-0.5 text-left">درس بعدی</p>
-            <p className="text-sm font-bold truncate">{next.title}</p>
+            <p className="de text-sm font-bold truncate">{next.title}</p>
           </div>
           <svg className="w-5 h-5 text-ink-soft group-hover:text-primary flex-shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />

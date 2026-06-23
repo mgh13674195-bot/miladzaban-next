@@ -46,7 +46,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 1, part: 'A2.1', free: true,
-    title: 'مرور A1 — احوالپرسی و معرفی',
+    topic: 'Berufe und Familie',
+    title: 'Mein Opa war auch schon Bäcker.',
     shortDescription: 'مروری بر درس‌های A1: معرفی خود، احوالپرسی رسمی و غیررسمی، فعل‌های پایه.',
     duration: '۴۵ دقیقه',
     tags: ['مرور', 'گرامر', 'مکالمه'],
@@ -66,7 +67,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 2, part: 'A2.1', free: true,
-    title: 'خانواده و روابط',
+    topic: 'Wohnen',
+    title: 'Wohin mit der Kommode?',
     shortDescription: 'لغات خانواده، توضیح روابط خانوادگی، ساختار جملات توصیفی.',
     duration: '۵۰ دقیقه',
     tags: ['لغت', 'خانواده', 'گرامر'],
@@ -86,7 +88,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 3, part: 'A2.1', free: true,
-    title: 'خانه و آپارتمان',
+    topic: 'Tourismus',
+    title: 'Hier finden Sie Ruhe und Erholung.',
     shortDescription: 'اتاق‌ها، لوازم خانگی، توضیح خانه به آلمانی و حروف اضافه مکانی.',
     duration: '۵۵ دقیقه',
     tags: ['لغت', 'مکان', 'حروف اضافه'],
@@ -106,7 +109,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 4, part: 'A2.1', free: true,
-    title: 'روز و برنامه روزانه',
+    topic: 'Einkaufen',
+    title: 'Was darf es sein?',
     shortDescription: 'فعل‌های جدا شدنی، بیان ساعت، توصیف برنامه روزانه.',
     duration: '۵۰ دقیقه',
     tags: ['گرامر', 'فعل‌های جداشدنی', 'زمان'],
@@ -125,7 +129,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 5, part: 'A2.1', free: true,
-    title: 'خرید و مغازه‌ها',
+    topic: 'Stadtbesichtigung',
+    title: 'Schaut mal, der schöne Dom!',
     shortDescription: 'دیالوگ‌های خرید، قیمت پرسیدن، مقایسه با صفات تفضیلی.',
     duration: '۴۵ دقیقه',
     tags: ['مکالمه', 'خرید', 'صفات'],
@@ -143,7 +148,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 6, part: 'A2.1', free: true,
-    title: 'غذا و آشپزخانه',
+    topic: 'Kultur',
+    title: 'Meine Lieblingsveranstaltung',
     shortDescription: 'لغات غذا، سفارش دادن در رستوران، دستور پخت ساده.',
     duration: '۵۵ دقیقه',
     tags: ['لغت', 'غذا', 'مکالمه'],
@@ -163,7 +169,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 7, part: 'A2.1', free: true,
-    title: 'حمل‌ونقل و مسیریابی',
+    topic: 'Sport und Fitness',
+    title: 'Wir könnten montags joggen gehen.',
     shortDescription: 'پرسیدن مسیر، استفاده از وسایل نقلیه عمومی، ساختار جمله با حروف اضافه.',
     duration: '۵۰ دقیقه',
     tags: ['مکالمه', 'شهر', 'حمل‌ونقل'],
@@ -180,7 +187,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 8, part: 'A2.1', free: true,
-    title: 'کار و حرفه',
+    topic: 'Gesundheit und Krankheit',
+    title: 'Hoffentlich ist es nicht das Herz!',
     shortDescription: 'معرفی شغل، توضیح مسئولیت‌ها، جملات در محیط کار.',
     duration: '۵۵ دقیقه',
     tags: ['کار', 'لغت', 'مکالمه'],
@@ -200,7 +208,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 9, part: 'A2.1', free: true,
-    title: 'اوقات فراغت و سرگرمی',
+    topic: 'Arbeitsleben',
+    title: 'Bei guten Autos sind wir ganz vorn.',
     shortDescription: 'بیان علاقه‌مندی‌ها، دعوت کردن، رد کردن دعوت با مؤدبانه.',
     duration: '۴۵ دقیقه',
     tags: ['مکالمه', 'علایق', 'لغت'],
@@ -217,7 +226,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 10, part: 'A2.1', free: true,
-    title: 'پوشاک و مد',
+    topic: 'Im Restaurant',
+    title: 'Gut, dass du reserviert hast.',
     shortDescription: 'لغات لباس، رنگ‌ها، خرید لباس و تعریف‌کردن.',
     duration: '۴۰ دقیقه',
     tags: ['لغت', 'خرید', 'توصیف'],
@@ -234,7 +244,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 11, part: 'A2.1', free: true,
-    title: 'بهداشت و سلامتی',
+    topic: 'Firmenporträt',
+    title: 'Ich freue mich so.',
     shortDescription: 'بیان درد، مراجعه به پزشک، داروخانه.',
     duration: '۵۰ دقیقه',
     tags: ['سلامتی', 'مکالمه', 'لغت'],
@@ -254,7 +265,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 12, part: 'A2.1', free: true,
-    title: 'مرور A2.1 — آزمون میانی',
+    topic: 'Ernährung',
+    title: 'Wenn es warm ist, essen wir meist Salat.',
     shortDescription: 'مرور کامل درس‌های ۱ تا ۱۱، آزمون تمرینی A2.1.',
     duration: '۶۰ دقیقه',
     tags: ['مرور', 'آزمون', 'A2.1'],
@@ -273,7 +285,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 13, part: 'A2.2', free: true,
-    title: 'آب‌وهوا و فصل‌ها',
+    topic: 'Sprachen lernen',
+    title: 'Meine erste „Deutschlehrerin“',
     shortDescription: 'توصیف هوا، فصل‌ها، جملات با Konjunktiv II برای بیان آرزو.',
     duration: '۴۵ دقیقه',
     tags: ['لغت', 'هوا', 'گرامر'],
@@ -290,7 +303,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 14, part: 'A2.2', free: true,
-    title: 'مسافرت و هتل',
+    topic: 'Post und Telekommunikation',
+    title: 'Es werden fleißig Päckchen gepackt.',
     shortDescription: 'رزرو هتل، پرسیدن اطلاعات، مکالمه‌های فرودگاه.',
     duration: '۵۵ دقیقه',
     tags: ['مسافرت', 'مکالمه', 'لغت'],
@@ -310,7 +324,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 15, part: 'A2.2', free: true,
-    title: 'تلفن و ارتباطات',
+    topic: 'Medien',
+    title: 'Gleich geht’s los!',
     shortDescription: 'مکالمه تلفنی، پیام گذاشتن، ارتباط رسمی.',
     duration: '۴۵ دقیقه',
     tags: ['مکالمه', 'تلفن', 'رسمی'],
@@ -327,7 +342,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 16, part: 'A2.2', free: true,
-    title: 'پول و بانک',
+    topic: 'Im Hotel',
+    title: 'Darf ich fragen, ob …?',
     shortDescription: 'مکالمه در بانک، باز کردن حساب، پرداخت قبض.',
     duration: '۵۰ دقیقه',
     tags: ['بانک', 'مکالمه', 'لغت'],
@@ -344,7 +360,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 17, part: 'A2.2', free: true,
-    title: 'تحصیل و مدرسه',
+    topic: 'Reisen und Verkehr',
+    title: 'Wir wollen nach Rumänien.',
     shortDescription: 'سیستم آموزشی آلمان، لغات دانشگاه و مدرسه، نوشتن درخواست.',
     duration: '۵۵ دقیقه',
     tags: ['تحصیل', 'لغت', 'گرامر'],
@@ -363,7 +380,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 18, part: 'A2.2', free: true,
-    title: 'فناوری و اینترنت',
+    topic: 'Wetter und Klima',
+    title: 'Ich freue mich auf Sonne und Wärme.',
     shortDescription: 'لغات دیجیتال، رسانه‌های اجتماعی، جملات با Passiv ساده.',
     duration: '۴۵ دقیقه',
     tags: ['فناوری', 'لغت', 'Passiv'],
@@ -380,7 +398,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 19, part: 'A2.2', free: true,
-    title: 'طبیعت و محیط زیست',
+    topic: 'Kulturelle Veranstaltungen',
+    title: 'Wohin gehen wir heute?',
     shortDescription: 'لغات طبیعت، مشکلات محیط زیستی، صحبت درباره راه‌حل‌ها.',
     duration: '۵۰ دقیقه',
     tags: ['محیط زیست', 'لغت', 'گفتگو'],
@@ -397,7 +416,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 20, part: 'A2.2', free: true,
-    title: 'فرهنگ و آداب آلمان',
+    topic: 'Bücher und Presse',
+    title: 'Ich durfte eigentlich keine Comics lesen.',
     shortDescription: 'آداب اجتماعی در آلمان، تعطیلات، رسوم فرهنگی مهم.',
     duration: '۵۰ دقیقه',
     tags: ['فرهنگ', 'آلمان', 'جامعه'],
@@ -416,7 +436,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 21, part: 'A2.2', free: true,
-    title: 'آمادگی TestDaF — مهارت Hören',
+    topic: 'Staat und Verwaltung',
+    title: 'Ja genau, den meine ich.',
     shortDescription: 'تکنیک‌های گوش دادن، تمرین سوالات Hören سطح A2/B1.',
     duration: '۶۰ دقیقه',
     tags: ['TestDaF', 'Hören', 'آزمون'],
@@ -435,7 +456,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 22, part: 'A2.2', free: true,
-    title: 'آمادگی TestDaF — مهارت Lesen',
+    topic: 'Mobilität und Verkehr',
+    title: 'Seit ich meinen Wagen verkauft habe, …',
     shortDescription: 'استراتژی‌های خواندن، انواع متن، تمرین سوالات Lesen.',
     duration: '۶۰ دقیقه',
     tags: ['TestDaF', 'Lesen', 'آزمون'],
@@ -452,7 +474,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 23, part: 'A2.2', free: true,
-    title: 'آمادگی TestDaF — مهارت Schreiben',
+    topic: 'Ausbildung und Beruf',
+    title: 'Der Beruf, der zu mir passt.',
     shortDescription: 'ساختار نامه رسمی، نوشتن ایمیل، بیان نظر.',
     duration: '۶۵ دقیقه',
     tags: ['TestDaF', 'Schreiben', 'نوشتار'],
@@ -471,7 +494,8 @@ export const a2Lessons: A2Lesson[] = [
 
   {
     id: 24, part: 'A2.2', free: true,
-    title: 'مرور نهایی A2 — آزمون پایانی',
+    topic: 'Arbeiten im Ausland',
+    title: 'Wie sah dein Alltag aus?',
     shortDescription: 'مرور کامل A2.1 و A2.2، آزمون پایانی، گواهینامه دیجیتال.',
     duration: '۷۰ دقیقه',
     tags: ['مرور', 'آزمون پایانی', 'A2'],

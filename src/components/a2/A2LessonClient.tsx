@@ -22,14 +22,19 @@ export default function A2LessonClient({
       {/* Sticky top bar */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-lg border-b border-line">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center gap-3">
-          <Link href="/courses/a2" className="text-ink-soft hover:text-primary transition">
+          <Link href="/courses/a2" className="text-ink-soft hover:text-primary transition flex-shrink-0">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </Link>
-          <div className="w-px h-4 bg-line" />
-          <span className="badge badge-dark text-[11px]">{lesson.part}</span>
-          <h1 className="font-black text-sm truncate flex-1">{lesson.title}</h1>
+          <div className="w-px h-4 bg-line flex-shrink-0" />
+          <span className="badge badge-dark text-[11px] flex-shrink-0">{lesson.part}</span>
+          <div className="flex-1 min-w-0 flex flex-col justify-center leading-tight">
+            <span className="text-[10px] text-ink-soft truncate">
+              Lektion {lesson.id} · {lesson.topic}
+            </span>
+            <h1 className="de font-black text-sm truncate">{lesson.title}</h1>
+          </div>
           {lesson.free && <span className="badge badge-green text-[11px] flex-shrink-0">رایگان</span>}
         </div>
       </header>

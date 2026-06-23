@@ -30,7 +30,8 @@ export interface A2LessonVideo {
 export interface A2Lesson {
   id: number                // 1–24
   part: A2Part              // 1–12 = A2.1 | 13–24 = A2.2
-  title: string
+  topic: string             // short German topic label, e.g. "Berufe und Familie"
+  title: string             // main German sentence, e.g. "Mein Opa war auch schon Bäcker."
   shortDescription: string
   duration: string
   free: boolean              // whole-lesson access flag (kept for future paid courses)

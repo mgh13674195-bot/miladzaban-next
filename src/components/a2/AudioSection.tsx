@@ -38,7 +38,7 @@ export default function AudioSection({ lesson }: { lesson: A2Lesson }) {
             )}
           </button>
           <div className="flex-1">
-            <p className="font-bold text-sm">{lesson.title}</p>
+            <p className="de font-bold text-sm">{lesson.title}</p>
             <p className="text-ink-soft text-xs mt-0.5">مکالمه و تلفظ صحیح · {lesson.duration}</p>
             <div className="h-1.5 bg-line rounded-full mt-3">
               <div className="h-full w-0 bg-primary rounded-full transition-all" />
