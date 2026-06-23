@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ScrollToTop from '@/components/ui/ScrollToTop'
 import Reveal from '@/components/ui/Reveal'
+import AmbientBackground from '@/components/ui/AmbientBackground'
 import Hero from '@/components/home/Hero'
 import CoursesSection from '@/components/home/CoursesSection'
 import LearningPreviewSection from '@/components/home/LearningPreviewSection'
@@ -27,7 +28,8 @@ const libraryFiles = [
 
 export default function HomePage() {
   return (
-    <>
+    <div className="relative bg-[#fff9ed]">
+      <AmbientBackground />
       <Navbar />
       <main className="pb-20 md:pb-0">
 
@@ -151,6 +153,6 @@ export default function HomePage() {
       </main>
       <Footer />
       <ScrollToTop />
-    </>
+    </div>
   )
 }
