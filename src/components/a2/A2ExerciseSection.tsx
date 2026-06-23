@@ -1,17 +1,23 @@
 import { A2Lesson } from '@/types/a2'
 import { getExercisesForLesson } from '@/data/exercises/a2/lesson1Exercises'
-import ExerciseRenderer from '@/components/exercises/ExerciseRenderer'
+import { getLessonNotes } from '@/data/lesson-notes/a2/lesson1Notes'
+import ExerciseTabs from '@/components/exercises/ExerciseTabs'
 
 const PLACEHOLDER = 'EXERCISE_PLACEHOLDER'
 
 export default function A2ExerciseSection({ lesson }: { lesson: A2Lesson }) {
   const hasEx = lesson.exercisesUrl && lesson.exercisesUrl !== PLACEHOLDER
-  const hasVocab = lesson.vocabulary.length > 0
+  const hasNotes = getLessonNotes(lesson.id) !== null
+  // The lesson-notes "واژگان" tab already covers vocabulary for lessons that have notes —
+  // suppress this flat table there to avoid showing two separate vocab surfaces.
+  const hasVocab = lesson.vocabulary.length > 0 && !hasNotes
   const exercises = getExercisesForLesson(lesson.id)
   const hasInteractiveExercises = exercises.length > 0
+  const showVocabCard = hasVocab || !hasInteractiveExercises
 
   return (
     <div className="space-y-5">
+      {showVocabCard && (
       <div className="card p-6">
         <h2 className="font-black text-lg mb-4 flex items-center gap-2">
           <span className="text-2xl">✏️</span> لغات کلیدی
@@ -58,6 +64,7 @@ export default function A2ExerciseSection({ lesson }: { lesson: A2Lesson }) {
           )
         )}
       </div>
+      )}
 
       {/* Interactive exercises */}
       {hasInteractiveExercises && (
@@ -65,7 +72,7 @@ export default function A2ExerciseSection({ lesson }: { lesson: A2Lesson }) {
           <h2 className="font-black text-lg mb-4 flex items-center gap-2 px-1">
             <span className="text-2xl">🧩</span> تمرین‌های تعاملی
           </h2>
-          <ExerciseRenderer exercises={exercises} />
+          <ExerciseTabs exercises={exercises} />
         </div>
       )}
     </div>

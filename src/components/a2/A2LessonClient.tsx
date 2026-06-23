@@ -1,12 +1,14 @@
 'use client'
 import Link from 'next/link'
 import { A2Lesson } from '@/types/a2'
+import { getLessonNotes } from '@/data/lesson-notes/a2/lesson1Notes'
 import VideoSection from './VideoSection'
 import PdfSection from './PdfSection'
 import AudioSection from './AudioSection'
 import A2ExerciseSection from './A2ExerciseSection'
 import LessonComments from './LessonComments'
 import LessonNavigation from './LessonNavigation'
+import LessonNotesSection from './notes/LessonNotesSection'
 
 export default function A2LessonClient({
   lesson,
@@ -17,6 +19,8 @@ export default function A2LessonClient({
   prev: A2Lesson | null
   next: A2Lesson | null
 }) {
+  const notes = getLessonNotes(lesson.id)
+
   return (
     <div className="min-h-screen bg-cream">
       {/* Sticky top bar */}
@@ -53,6 +57,7 @@ export default function A2LessonClient({
           <div className="space-y-6">
             <VideoSection lesson={lesson} />
             <AudioSection lesson={lesson} />
+            {notes && <LessonNotesSection notes={notes} />}
             <A2ExerciseSection lesson={lesson} />
             <LessonComments lessonId={lesson.id} initial={lesson.sampleComments} />
           </div>

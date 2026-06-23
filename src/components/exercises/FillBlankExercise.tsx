@@ -58,28 +58,32 @@ export default function FillBlankExercise({ exercise }: { exercise: FillBlankExe
 
         return (
           <div key={item.id} className="border border-line rounded-2xl p-4">
-            <div className="flex items-center gap-2 flex-wrap mb-3">
-              <span className="text-xs font-bold text-ink-soft flex-shrink-0">{i + 1}.</span>
-              <span className="de text-sm font-semibold">{before}</span>
-              <input
-                type="text"
-                value={value}
-                onFocus={() => setFocusedId(item.id)}
-                onChange={(e) => setValues((prev) => ({ ...prev, [item.id]: e.target.value }))}
-                onKeyDown={(e) => e.key === 'Enter' && check(item.id)}
-                dir="ltr"
-                className={`de inline-block px-2 py-1 rounded-lg border-2 border-line focus:border-primary focus:outline-none text-sm font-semibold ${
-                  isSentenceBlank ? 'flex-1 min-w-[220px] text-left' : 'w-32 sm:w-40 text-center'
-                }`}
-                placeholder={isSentenceBlank ? 'Meine Großmutter war …' : '…'}
-              />
-              <span className="de text-sm font-semibold">{after}</span>
+            <div className="flex items-start justify-between gap-3 flex-wrap mb-3">
+              {/* German sentence + blank — isolated in its own LTR context so the
+                  fragments render in natural reading order regardless of the page's RTL direction. */}
+              <div dir="ltr" className="flex items-center gap-2 flex-wrap flex-1 min-w-0 text-left">
+                <span className="text-xs font-bold text-ink-soft flex-shrink-0">{i + 1}.</span>
+                <span className="de text-sm font-semibold">{before}</span>
+                <input
+                  type="text"
+                  value={value}
+                  onFocus={() => setFocusedId(item.id)}
+                  onChange={(e) => setValues((prev) => ({ ...prev, [item.id]: e.target.value }))}
+                  onKeyDown={(e) => e.key === 'Enter' && check(item.id)}
+                  dir="ltr"
+                  className={`de inline-block px-2 py-1 rounded-lg border-2 border-line focus:border-primary focus:outline-none text-sm font-semibold ${
+                    isSentenceBlank ? 'flex-1 min-w-[220px] text-left' : 'w-32 sm:w-40 text-center'
+                  }`}
+                  placeholder={isSentenceBlank ? 'Meine Großmutter war …' : '…'}
+                />
+                <span className="de text-sm font-semibold">{after}</span>
+              </div>
 
               <button
                 type="button"
                 onClick={() => check(item.id)}
                 disabled={!value.trim()}
-                className="btn-ghost btn-sm flex-shrink-0 mr-auto disabled:opacity-40 disabled:cursor-not-allowed"
+                className="btn-ghost btn-sm flex-shrink-0 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 بررسی
               </button>
