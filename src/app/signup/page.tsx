@@ -1,8 +1,39 @@
 'use client'
+import { useState } from 'react'
 import Link from 'next/link'
 import AuthTrustPanel from '@/components/auth/AuthTrustPanel'
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const PHONE_RE = /^\+?[0-9]{8,15}$/
+
+function validateIdentifier(value: string): string | null {
+  const trimmed = value.trim()
+  if (!trimmed) return 'لطفاً ایمیل یا شماره تلفن را وارد کنید'
+  const isEmail = trimmed.includes('@')
+  const normalizedPhone = trimmed.replace(/[\s-]/g, '')
+  if (isEmail ? !EMAIL_RE.test(trimmed) : !PHONE_RE.test(normalizedPhone)) {
+    return 'ایمیل یا شماره تلفن معتبر وارد کنید'
+  }
+  return null
+}
+
 export default function SignupPage() {
+  const [identifier, setIdentifier] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [notice, setNotice] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const validationError = validateIdentifier(identifier)
+    if (validationError) {
+      setError(validationError)
+      setNotice(false)
+      return
+    }
+    setError(null)
+    setNotice(true)
+  }
+
   return (
     <div className="min-h-screen flex">
       {/* Branded trust panel — desktop only */}
@@ -30,14 +61,22 @@ export default function SignupPage() {
                 <p className="text-sm text-ink-soft">اولین درس را رایگان شروع کن.</p>
               </div>
 
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label className="input-label">نام و نام خانوادگی</label>
                   <input type="text" className="input" placeholder="مثلاً علی رضایی" />
                 </div>
                 <div>
-                  <label className="input-label">ایمیل</label>
-                  <input type="email" className="input" placeholder="example@email.com" dir="ltr" />
+                  <label className="input-label">ایمیل یا شماره تلفن</label>
+                  <input
+                    type="text"
+                    className="input"
+                    placeholder="ایمیل یا شماره تلفن خود را وارد کنید"
+                    dir="ltr"
+                    value={identifier}
+                    onChange={(e) => { setIdentifier(e.target.value); setError(null); setNotice(false) }}
+                  />
+                  {error && <p className="text-xs text-red-600 mt-1.5">{error}</p>}
                 </div>
                 <div>
                   <label className="input-label">رمز عبور</label>
@@ -59,6 +98,12 @@ export default function SignupPage() {
                 <button type="submit" className="btn-primary w-full justify-center text-sm py-3.5">
                   ایجاد حساب رایگان
                 </button>
+
+                {notice && (
+                  <p className="text-xs text-ink-soft bg-cream border border-line rounded-xl p-3 leading-relaxed">
+                    ثبت‌نام هنوز فعال نشده است. این بخش به‌زودی با سیستم امن ایمیل یا شماره تلفن راه‌اندازی می‌شود.
+                  </p>
+                )}
               </form>
 
               <div className="relative my-6">
@@ -66,8 +111,13 @@ export default function SignupPage() {
                 <div className="relative flex justify-center"><span className="bg-white px-4 text-xs text-ink-soft">یا</span></div>
               </div>
 
-              <button className="w-full flex items-center justify-center gap-3 border-2 border-line rounded-2xl py-3 text-sm font-bold text-ink hover:border-ink hover:bg-cream transition-all">
-                <span className="text-xl">G</span> ثبت‌نام با Google
+              <button
+                type="button"
+                disabled
+                title="به‌زودی"
+                className="w-full flex items-center justify-center gap-3 border-2 border-line rounded-2xl py-3 text-sm font-bold text-ink-soft/50 opacity-60 cursor-not-allowed"
+              >
+                <span className="text-xl">G</span> ثبت‌نام با Google (به‌زودی)
               </button>
 
               <p className="text-center text-sm text-ink-soft mt-6">
