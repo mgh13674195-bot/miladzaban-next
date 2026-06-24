@@ -28,7 +28,7 @@ const libraryFiles = [
 
 export default function HomePage() {
   return (
-    <div className="relative bg-[#fff9ed]">
+    <div className="relative bg-[#fffbf5]">
       <AmbientBackground />
       <Navbar />
       <main className="pb-20 md:pb-0">
