@@ -10,7 +10,7 @@ export default function CourseCard({ course, featured }: Props) {
   return (
     <Link
       href={`/courses/${course.id}`}
-      className={`glass-card-hover group flex flex-col ${featured ? 'md:flex-row' : ''}`}
+      className={`glass-card-hover group flex flex-col ${featured ? 'md:flex-row' : 'h-full'}`}
     >
       {/* Banner */}
       <div
