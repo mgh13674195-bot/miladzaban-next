@@ -16,7 +16,8 @@ export default function CoursePage({ params }: Props) {
   const course = courses.find((c) => c.id === params.level)
   if (!course) notFound()
 
-  const lessonCount = course.lessons.length || 24
+  const hasLessons = course.lessons.length > 0
+  const lessonCount = course.lessons.length
   const freeLessons = course.lessons.filter((l) => l.free).length
 
   return (
@@ -45,32 +46,46 @@ export default function CoursePage({ params }: Props) {
                 <h1 className="text-2xl sm:text-3xl font-black mb-2">{course.title}</h1>
                 <p className="text-white/70 mb-5 max-w-lg">{course.description}</p>
                 <div className="flex flex-wrap gap-5 text-sm text-white/75">
-                  <span className="flex items-center gap-1.5">📚 {lessonCount} درس</span>
+                  <span className="flex items-center gap-1.5">📚 {hasLessons ? `${lessonCount} درس` : 'به‌زودی'}</span>
                   <span className="flex items-center gap-1.5">⏱ ۳۶ ساعت</span>
-                  <span className="flex items-center gap-1.5">🎁 {freeLessons} درس رایگان</span>
+                  {hasLessons && <span className="flex items-center gap-1.5">🎁 {freeLessons} درس رایگان</span>}
                   <span className="flex items-center gap-1.5">♾️ دسترسی دائمی</span>
                 </div>
               </div>
 
               {/* Buy card */}
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 flex-shrink-0 w-full sm:w-64 text-center">
-                <div className="text-white/50 text-sm line-through mb-0.5">{course.originalPrice} تومان</div>
-                <div className="text-3xl font-black text-gold leading-none">{course.price}</div>
-                <div className="text-white/60 text-xs mt-0.5 mb-5">تومان</div>
-                <button className="btn-gold w-full justify-center text-sm mb-2">خرید دوره 🎓</button>
-                <Link href={course.lessons[0] ? `/courses/${course.id}/lessons/${course.lessons[0].id}` : '#'} className="text-white/60 text-xs hover:text-white transition-colors">
-                  یا شروع رایگان ←
-                </Link>
+                {hasLessons ? (
+                  <>
+                    <div className="text-white/50 text-sm line-through mb-0.5">{course.originalPrice} تومان</div>
+                    <div className="text-3xl font-black text-gold leading-none">{course.price}</div>
+                    <div className="text-white/60 text-xs mt-0.5 mb-5">تومان</div>
+                    <button className="btn-gold w-full justify-center text-sm mb-2">خرید دوره 🎓</button>
+                    <Link href={`/courses/${course.id}/lessons/${course.lessons[0].id}`} className="text-white/60 text-xs hover:text-white transition-colors">
+                      یا شروع رایگان ←
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <div className="text-lg font-black text-white mb-1">به‌زودی</div>
+                    <p className="text-white/60 text-xs mb-5">محتوای این سطح در حال آماده‌سازی است.</p>
+                    <button type="button" disabled title="به‌زودی" className="btn-gold w-full justify-center text-sm opacity-50 cursor-not-allowed">
+                      به‌زودی
+                    </button>
+                  </>
+                )}
               </div>
             </div>
 
             {/* Progress bar placeholder */}
-            <div className="mt-8 max-w-sm">
-              <div className="flex justify-between text-xs text-white/50 mb-1.5"><span>پیشرفت شما</span><span>۸٪</span></div>
-              <div className="h-1.5 bg-white/15 rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-l from-gold to-primary rounded-full" style={{ width: '8%' }} />
+            {hasLessons && (
+              <div className="mt-8 max-w-sm">
+                <div className="flex justify-between text-xs text-white/50 mb-1.5"><span>پیشرفت شما</span><span>۸٪</span></div>
+                <div className="h-1.5 bg-white/15 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-l from-gold to-primary rounded-full" style={{ width: '8%' }} />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
@@ -82,19 +97,9 @@ export default function CoursePage({ params }: Props) {
             <div>
               <div className="flex items-center justify-between mb-5">
                 <h2 className="text-lg font-black">📋 سرفصل دوره</h2>
-                <span className="text-xs text-ink-soft">{freeLessons} درس رایگان</span>
+                {hasLessons && <span className="text-xs text-ink-soft">{freeLessons} درس رایگان</span>}
               </div>
-              <LessonList
-                courseId={course.id}
-                lessons={course.lessons.length > 0 ? course.lessons : Array.from({ length: 8 }, (_, i) => ({
-                  id: i + 1,
-                  title: `درس ${i + 1}`,
-                  duration: '۴۵ دقیقه',
-                  tags: [],
-                  free: i < 2,
-                  done: false,
-                }))}
-              />
+              <LessonList courseId={course.id} lessons={course.lessons} />
             </div>
 
             {/* Right — course info */}
@@ -103,7 +108,7 @@ export default function CoursePage({ params }: Props) {
                 <h3 className="font-black text-sm mb-4">این دوره شامل چیست؟</h3>
                 <ul className="space-y-3 text-sm">
                   {[
-                    { icon: '🎬', text: `${lessonCount} ویدیوی آموزشی` },
+                    { icon: '🎬', text: hasLessons ? `${lessonCount} ویدیوی آموزشی` : 'ویدیوهای آموزشی (به‌زودی)' },
                     { icon: '✏️', text: 'تمرین‌های تعاملی هر درس' },
                     { icon: '📄', text: 'فایل‌های PDF قابل دانلود' },
                     { icon: '💬', text: 'دیالوگ‌های صوتی نمونه' },
@@ -130,9 +135,21 @@ export default function CoursePage({ params }: Props) {
 
               <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-3xl p-5 text-center">
                 <div className="text-3xl mb-2">🎓</div>
-                <h3 className="font-black mb-1">آماده خرید؟</h3>
-                <p className="text-xs text-white/70 mb-4">ضمانت بازگشت وجه ۷ روزه</p>
-                <button className="btn-gold w-full justify-center text-sm">خرید دوره — {course.price} تومان</button>
+                {hasLessons ? (
+                  <>
+                    <h3 className="font-black mb-1">آماده خرید؟</h3>
+                    <p className="text-xs text-white/70 mb-4">ضمانت بازگشت وجه ۷ روزه</p>
+                    <button className="btn-gold w-full justify-center text-sm">خرید دوره — {course.price} تومان</button>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="font-black mb-1">به‌زودی</h3>
+                    <p className="text-xs text-white/70 mb-4">این سطح هنوز برای خرید آماده نیست.</p>
+                    <button type="button" disabled title="به‌زودی" className="btn-gold w-full justify-center text-sm opacity-50 cursor-not-allowed">
+                      به‌زودی
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>

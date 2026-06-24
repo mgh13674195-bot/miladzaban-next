@@ -15,6 +15,16 @@ interface Props {
 }
 
 export default function LessonList({ courseId, lessons }: Props) {
+  if (lessons.length === 0) {
+    return (
+      <div className="bg-white rounded-2xl border border-line p-8 text-center">
+        <div className="text-3xl mb-3">🛠️</div>
+        <p className="font-bold text-sm mb-1">درس‌های این سطح به‌زودی اضافه می‌شوند.</p>
+        <p className="text-xs text-ink-soft">به محض آمادگی محتوا، اینجا نمایش داده می‌شود.</p>
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-2">
       {lessons.map((lesson) => {
