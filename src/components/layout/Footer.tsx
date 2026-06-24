@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const cols = {
   'دوره‌ها': [
@@ -64,11 +65,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2.5 font-black text-xl mb-4 group">
-              <div className="w-9 h-9 rounded-xl overflow-hidden flex flex-col flex-shrink-0 group-hover:scale-105 transition-transform">
-                <div className="flex-1 bg-white/10 border border-white/10" />
-                <div className="flex-1 bg-primary" />
-                <div className="flex-1 bg-gold" />
-              </div>
+              <Image
+                src="/image/flag-germany-brush.png"
+                alt="German flag"
+                width={44}
+                height={55}
+                className="w-11 h-auto object-contain flex-shrink-0 group-hover:scale-105 transition-transform"
+              />
               میلاد <span className="text-gold">قاسمی</span>
             </Link>
             <p className="text-white/55 text-sm leading-relaxed mb-6 max-w-[260px]">
