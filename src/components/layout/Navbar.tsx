@@ -18,6 +18,7 @@ const navLinks = [
   },
   { label: 'مطالب آموزشی', href: '/blog' },
   { label: 'کتابخانه', href: '/#library' },
+  { label: 'تماس با ما', href: '/contact' },
 ]
 
 export default function Navbar() {
@@ -42,11 +43,11 @@ export default function Navbar() {
                 height={55}
                 className="w-11 h-auto object-contain flex-shrink-0 group-hover:scale-105 transition-transform"
               />
-              <span>میلاد <span className="text-primary">قاسمی</span></span>
+              <span className="text-xl text-[#111111]">میلاد قاسمی</span>
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex flex-1 justify-center">
+            <nav className="hidden lg:flex flex-1 justify-center">
               <ul className="flex gap-1 list-none">
                 {navLinks.map((item) => (
                   <li
@@ -90,7 +91,7 @@ export default function Navbar() {
             </nav>
 
             {/* Actions */}
-            <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+            <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
               <Link href="/login" className="btn-ghost btn-sm">ورود</Link>
               <Link href="/signup" className="btn-primary btn-sm">ثبت‌نام رایگان</Link>
               <Link href="/panel" className="btn-dark btn-sm gap-1.5">
@@ -100,7 +101,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden w-10 h-10 rounded-xl bg-cream grid place-items-center text-ink hover:bg-line transition-colors"
+              className="lg:hidden w-10 h-10 rounded-xl bg-cream grid place-items-center text-ink hover:bg-line transition-colors"
               onClick={() => setMobileOpen(true)}
               aria-label="منو"
             >
@@ -130,7 +131,7 @@ export default function Navbar() {
                   height={50}
                   className="w-10 h-auto object-contain flex-shrink-0"
                 />
-                میلاد <span className="text-primary">قاسمی</span>
+                <span className="text-lg text-[#111111]">میلاد قاسمی</span>
               </Link>
               <button
                 className="w-8 h-8 rounded-full bg-cream grid place-items-center text-sm text-ink-soft hover:bg-line"
