@@ -63,4 +63,22 @@ export interface DialogueExerciseData extends ExerciseBase {
   items: DialogueItem[]
 }
 
-export type Exercise = FillBlankExerciseData | MultipleChoiceExerciseData | DialogueExerciseData
+export interface SentenceOrderItem {
+  id: string
+  /** Words shown in the word bank, in shuffled/scrambled order. */
+  words: string[]
+  /** The correctly ordered sentence. */
+  correctOrder: string[]
+  translationFa?: string
+}
+
+export interface SentenceOrderExerciseData extends ExerciseBase {
+  type: 'sentence-order'
+  items: SentenceOrderItem[]
+}
+
+export type Exercise =
+  | FillBlankExerciseData
+  | MultipleChoiceExerciseData
+  | DialogueExerciseData
+  | SentenceOrderExerciseData

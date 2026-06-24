@@ -3,6 +3,7 @@ import ExerciseCard from './ExerciseCard'
 import FillBlankExercise from './FillBlankExercise'
 import MultipleChoiceExercise from './MultipleChoiceExercise'
 import DialogueExercise from './DialogueExercise'
+import SentenceOrderExercise from './SentenceOrderExercise'
 
 function renderBody(exercise: Exercise) {
   switch (exercise.type) {
@@ -12,6 +13,8 @@ function renderBody(exercise: Exercise) {
       return <MultipleChoiceExercise exercise={exercise} />
     case 'dialogue':
       return <DialogueExercise exercise={exercise} />
+    case 'sentence-order':
+      return <SentenceOrderExercise exercise={exercise} />
     default:
       return null
   }
