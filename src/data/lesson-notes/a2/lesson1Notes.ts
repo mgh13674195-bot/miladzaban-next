@@ -1,5 +1,6 @@
 import { LessonNotes } from '@/types/lessonNotes'
 import { lesson2Notes } from './lesson2Notes'
+import { lesson3Notes } from './lesson3Notes'
 
 /**
  * A2.1 — Lektion 1: Berufe und Familie
@@ -372,5 +373,6 @@ export const lesson1Notes: LessonNotes = {
 export function getLessonNotes(lessonId: number): LessonNotes | null {
   if (lessonId === 1) return lesson1Notes
   if (lessonId === 2) return lesson2Notes
+  if (lessonId === 3) return lesson3Notes
   return null
 }
