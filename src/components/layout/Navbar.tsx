@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
@@ -34,11 +35,13 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 font-black text-lg flex-shrink-0 group">
-              <div className="w-9 h-9 rounded-xl overflow-hidden flex flex-col shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
-                <div className="flex-1 bg-[#1a1a1a]" />
-                <div className="flex-1 bg-primary" />
-                <div className="flex-1 bg-gold" />
-              </div>
+              <Image
+                src="/image/flag-germany-brush.png"
+                alt="German flag"
+                width={44}
+                height={55}
+                className="w-11 h-auto object-contain flex-shrink-0 group-hover:scale-105 transition-transform"
+              />
               <span>میلاد <span className="text-primary">قاسمی</span></span>
             </Link>
 
@@ -120,9 +123,13 @@ export default function Navbar() {
             {/* Drawer header */}
             <div className="flex items-center justify-between p-5 border-b border-line">
               <Link href="/" className="flex items-center gap-2 font-black text-base" onClick={() => setMobileOpen(false)}>
-                <div className="w-8 h-8 rounded-lg overflow-hidden flex flex-col flex-shrink-0">
-                  <div className="flex-1 bg-[#1a1a1a]" /><div className="flex-1 bg-primary" /><div className="flex-1 bg-gold" />
-                </div>
+                <Image
+                  src="/image/flag-germany-brush.png"
+                  alt="German flag"
+                  width={40}
+                  height={50}
+                  className="w-10 h-auto object-contain flex-shrink-0"
+                />
                 میلاد <span className="text-primary">قاسمی</span>
               </Link>
               <button
