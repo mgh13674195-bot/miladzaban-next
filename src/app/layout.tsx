@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${vazir.variable} ${inter.variable} font-vazir bg-cream text-ink antialiased`}>
+      <body className={`${vazir.variable} ${inter.variable} font-vazir bg-[#fffbf5] text-ink antialiased`}>
         {children}
         <BottomNav />
       </body>

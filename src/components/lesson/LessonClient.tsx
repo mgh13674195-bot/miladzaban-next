@@ -28,7 +28,7 @@ export default function LessonClient({ course, lesson, prevLesson, nextLesson }:
   const [sidebarTab, setSidebarTab] = useState<'video' | 'lessons'>('video')
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-[#fffbf5]">
       {/* Lesson topbar */}
       <div className="sticky top-0 z-50 glass border-b border-line/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-5 h-14 flex items-center gap-3">

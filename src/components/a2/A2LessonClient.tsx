@@ -22,7 +22,7 @@ export default function A2LessonClient({
   const notes = getLessonNotes(lesson.id)
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-[#fffbf5]">
       {/* Sticky top bar */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-lg border-b border-line">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center gap-3">
