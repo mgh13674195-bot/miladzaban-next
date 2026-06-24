@@ -135,7 +135,7 @@
     @apply w-1.5 h-1.5 rounded-full bg-primary inline-block;
   }
   .display-title {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-black text-ink leading-[1.1] tracking-tight;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-[1.3] tracking-normal;
   }
   .section-title { @apply text-3xl sm:text-4xl font-black text-ink leading-tight tracking-tight; }
   .section-subtitle { @apply text-ink-soft text-base sm:text-lg max-w-xl mx-auto leading-relaxed; }
