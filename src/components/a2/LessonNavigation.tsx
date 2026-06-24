@@ -18,9 +18,9 @@ export default function LessonNavigation({
           <svg className="w-5 h-5 text-ink-soft group-hover:text-primary flex-shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <p className="text-[11px] text-ink-soft mb-0.5">درس قبلی</p>
-            <p className="de text-sm font-bold truncate">{prev.title}</p>
+            <p className="de-block text-sm font-bold leading-snug line-clamp-2 break-words max-w-full">{prev.title}</p>
           </div>
         </Link>
       ) : <div className="flex-1" />}
@@ -30,9 +30,9 @@ export default function LessonNavigation({
           href={`/courses/a2/lessons/${next.id}`}
           className="flex-1 card p-4 flex items-center justify-end gap-3 hover:border-primary hover:translate-x-1 transition-all group text-left"
         >
-          <div className="min-w-0 text-left">
+          <div className="min-w-0 flex-1 text-left">
             <p className="text-[11px] text-ink-soft mb-0.5 text-left">درس بعدی</p>
-            <p className="de text-sm font-bold truncate">{next.title}</p>
+            <p className="de-block text-sm font-bold leading-snug line-clamp-2 break-words max-w-full">{next.title}</p>
           </div>
           <svg className="w-5 h-5 text-ink-soft group-hover:text-primary flex-shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
