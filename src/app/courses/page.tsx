@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import CourseCard from '@/components/course/CourseCard'
@@ -6,6 +9,11 @@ import { courses } from '@/data/courses'
 const levels = ['همه', 'A1', 'A2', 'B1', 'B2', 'C1']
 
 export default function CoursesPage() {
+  const [activeLevel, setActiveLevel] = useState('همه')
+
+  const filteredCourses =
+    activeLevel === 'همه' ? courses : courses.filter((c) => c.level === activeLevel)
+
   return (
     <>
       <Navbar />
@@ -27,34 +35,45 @@ export default function CoursesPage() {
         <div className="sticky top-16 z-30 bg-cream/90 backdrop-blur-xl border-b border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex gap-2 overflow-x-auto scrollbar-none">
             {levels.map((lv) => (
-              <span
+              <button
                 key={lv}
+                type="button"
+                onClick={() => setActiveLevel(lv)}
+                aria-pressed={activeLevel === lv}
                 className={`px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer whitespace-nowrap transition-all
-                  ${lv === 'همه' ? 'bg-primary text-white shadow-md shadow-primary/25' : 'bg-white border border-line text-ink-soft hover:border-primary hover:text-primary'}`}
+                  ${activeLevel === lv ? 'bg-primary text-white shadow-md shadow-primary/25' : 'bg-white border border-line text-ink-soft hover:border-primary hover:text-primary'}`}
               >
                 {lv}
-              </span>
+              </button>
             ))}
           </div>
         </div>
 
         {/* Featured A1 */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-          <div className="mb-4 flex items-center gap-2">
-            <span className="badge-red">محبوب‌ترین</span>
-            <h2 className="font-black text-lg">دوره پرطرفدار</h2>
+        {activeLevel === 'همه' && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+            <div className="mb-4 flex items-center gap-2">
+              <span className="badge-red">محبوب‌ترین</span>
+              <h2 className="font-black text-lg">دوره پرطرفدار</h2>
+            </div>
+            <CourseCard course={courses[0]} featured />
           </div>
-          <CourseCard course={courses[0]} featured />
-        </div>
+        )}
 
         {/* All courses */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-10">
-          <h2 className="font-black text-lg mb-6">همه دوره‌ها</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {courses.slice(1).map((course) => (
-              <CourseCard key={course.id} course={course} />
-            ))}
-          </div>
+          <h2 className="font-black text-lg mb-6">
+            {activeLevel === 'همه' ? 'همه دوره‌ها' : `دوره‌های سطح ${activeLevel}`}
+          </h2>
+          {filteredCourses.length === 0 ? (
+            <p className="text-ink-soft text-sm">دوره‌ای برای این سطح یافت نشد.</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {(activeLevel === 'همه' ? filteredCourses.slice(1) : filteredCourses).map((course) => (
+                <CourseCard key={course.id} course={course} />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Why us */}
