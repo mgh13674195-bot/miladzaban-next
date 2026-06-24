@@ -23,8 +23,8 @@ export default function A2LessonClient({
 
   return (
     <div className="min-h-screen bg-[#fffbf5]">
-      {/* Sticky top bar */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-lg border-b border-line">
+      {/* Lesson header — sticks directly below the shared Navbar (top-16 = navbar height) */}
+      <header className="sticky top-16 z-40 bg-white/90 backdrop-blur-lg border-b border-line">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center gap-3">
           <Link href="/courses/a2" className="text-ink-soft hover:text-primary transition flex-shrink-0">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

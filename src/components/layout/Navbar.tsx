@@ -26,11 +26,14 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openSub, setOpenSub] = useState<string | null>(null)
 
-  const isLesson = pathname?.includes('/lessons/')
+  // A2 lessons show the shared Navbar (stacked above their own lesson header).
+  // Other levels keep their dedicated in-page lesson topbar instead, to avoid
+  // a duplicated/second navigation bar there.
+  const isNonA2Lesson = pathname?.includes('/lessons/') && !pathname?.includes('/a2/lessons/')
 
   return (
     <>
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${isLesson ? 'hidden' : ''}`}>
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isNonA2Lesson ? 'hidden' : ''}`}>
         <div className="glass border-b border-line/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
 
