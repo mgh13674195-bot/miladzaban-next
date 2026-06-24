@@ -103,18 +103,25 @@ export default function HomePage() {
                     <span className="badge bg-gold/20 text-gold border-gold/30 mb-4">رایگان</span>
                     <h2 className="text-2xl font-black mb-3">کتابخانه‌ی <span className="text-gold">میلاد</span></h2>
                     <p className="text-white/60 mb-6 text-sm leading-relaxed">منابع آموزشی رایگان — PDF، فایل‌های صوتی و راهنماهای آزمون.</p>
-                    <Link href="#" className="btn-gold btn-sm">مشاهده کامل کتابخانه ←</Link>
+                    <button
+                      type="button"
+                      disabled
+                      title="به‌زودی"
+                      className="btn-gold btn-sm opacity-50 cursor-not-allowed"
+                    >
+                      مشاهده کامل کتابخانه (به‌زودی)
+                    </button>
                   </div>
                   <div className="space-y-3">
                     {libraryFiles.map((f) => (
-                      <a key={f.name} href="#" className="flex items-center gap-3.5 bg-white/6 border border-white/10 p-4 rounded-2xl hover:bg-white/12 hover:-translate-x-1 transition-all group">
+                      <div key={f.name} className="flex items-center gap-3.5 bg-white/6 border border-white/10 p-4 rounded-2xl opacity-70" title="به‌زودی">
                         <div className="text-2xl flex-shrink-0">{f.icon}</div>
                         <div className="flex-1 min-w-0">
                           <b className="block text-sm truncate">{f.name}</b>
                           <small className="text-white/45 text-xs">{f.size}</small>
                         </div>
-                        <span className="text-white/40 group-hover:text-white transition-colors text-sm">↓</span>
-                      </a>
+                        <span className="text-white/40 text-[11px] flex-shrink-0">به‌زودی</span>
+                      </div>
                     ))}
                   </div>
                 </div>

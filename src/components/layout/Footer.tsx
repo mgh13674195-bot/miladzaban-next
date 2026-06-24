@@ -23,9 +23,36 @@ const cols = {
 }
 
 const socials = [
-  { label: 'یوتیوب', icon: '▶', href: '#' },
-  { label: 'اینستاگرام', icon: '◉', href: '#' },
-  { label: 'تلگرام', icon: '✈', href: '#' },
+  {
+    label: 'یوتیوب',
+    ariaLabel: 'YouTube',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+        <rect x="2.5" y="5.5" width="19" height="13" rx="4" />
+        <path d="M10.5 9.5l5 2.5-5 2.5v-5z" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: 'اینستاگرام',
+    ariaLabel: 'Instagram',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: 'تلگرام',
+    ariaLabel: 'Telegram',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M21.5 3.5L2.7 11.1c-1 .4-1 1 .1 1.3l4.6 1.4 1.8 5.6c.2.6.4.7.9.4l2.6-2 4.6 3.4c.6.4 1.1.2 1.3-.5l3.2-15.1c.2-.9-.4-1.3-1.3-.9zM8.7 14.3l-2.1-.7L17 6.5c.2-.1.4 0 .2.2L9.5 13c-.2.2-.4.5-.5 1z" />
+      </svg>
+    ),
+  },
 ]
 
 export default function Footer() {
@@ -49,14 +76,15 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               {socials.map((s) => (
-                <a
+                <span
                   key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-10 h-10 rounded-xl bg-white/8 grid place-items-center text-sm hover:bg-primary hover:-translate-y-0.5 transition-all"
+                  role="img"
+                  aria-label={`${s.ariaLabel} (به‌زودی)`}
+                  title="به‌زودی"
+                  className="w-10 h-10 rounded-xl bg-white/8 grid place-items-center text-white/50 cursor-default"
                 >
                   {s.icon}
-                </a>
+                </span>
               ))}
             </div>
           </div>
@@ -81,8 +109,8 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/40 text-xs">
           <span>© ۱۴۰۳ میلاد قاسمی. تمامی حقوق محفوظ است.</span>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-white transition-colors">حریم خصوصی</a>
-            <a href="#" className="hover:text-white transition-colors">قوانین استفاده</a>
+            <span className="cursor-default" title="به‌زودی">حریم خصوصی</span>
+            <span className="cursor-default" title="به‌زودی">قوانین استفاده</span>
           </div>
         </div>
       </div>

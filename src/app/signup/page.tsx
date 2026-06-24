@@ -51,8 +51,8 @@ export default function SignupPage() {
                 <div className="flex items-start gap-2">
                   <input type="checkbox" id="terms" className="w-4 h-4 accent-primary mt-0.5 flex-shrink-0" />
                   <label htmlFor="terms" className="text-xs text-ink-soft cursor-pointer leading-relaxed">
-                    با <a href="#" className="text-primary hover:underline">قوانین و مقررات</a> و{' '}
-                    <a href="#" className="text-primary hover:underline">حریم خصوصی</a> موافقم.
+                    با <span className="text-ink-soft/70 cursor-default" title="به‌زودی">قوانین و مقررات</span> و{' '}
+                    <span className="text-ink-soft/70 cursor-default" title="به‌زودی">حریم خصوصی</span> موافقم.
                   </label>
                 </div>
 

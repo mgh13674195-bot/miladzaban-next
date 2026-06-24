@@ -39,7 +39,7 @@ export default function LoginPage() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <label className="input-label !mb-0">رمز عبور</label>
-                    <a href="#" className="text-xs text-primary hover:underline">فراموش کردی؟</a>
+                    <span className="text-xs text-ink-soft/60 cursor-default" title="به‌زودی">فراموش کردی؟</span>
                   </div>
                   <input type="password" className="input" placeholder="••••••••" dir="ltr" />
                 </div>
