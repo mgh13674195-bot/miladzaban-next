@@ -1,6 +1,8 @@
 import { LessonNotes } from '@/types/lessonNotes'
 import { lesson2Notes } from './lesson2Notes'
 import { lesson3Notes } from './lesson3Notes'
+import { lesson4Notes } from './lesson4Notes'
+import { lesson5Notes } from './lesson5Notes'
 
 /**
  * A2.1 — Lektion 1: Berufe und Familie
@@ -374,5 +376,7 @@ export function getLessonNotes(lessonId: number): LessonNotes | null {
   if (lessonId === 1) return lesson1Notes
   if (lessonId === 2) return lesson2Notes
   if (lessonId === 3) return lesson3Notes
+  if (lessonId === 4) return lesson4Notes
+  if (lessonId === 5) return lesson5Notes
   return null
 }

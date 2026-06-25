@@ -1,6 +1,8 @@
 import { Exercise } from '@/types/exercise'
 import { lesson2Exercises } from './lesson2Exercises'
 import { lesson3Exercises } from './lesson3Exercises'
+import { lesson4Exercises } from './lesson4Exercises'
+import { lesson5Exercises } from './lesson5Exercises'
 
 /**
  * A2.1 — Lektion 1: Familie, Berufe, Kindheit, Possessivartikel, Perfekt
@@ -216,5 +218,7 @@ export function getExercisesForLesson(lessonId: number): Exercise[] {
   if (lessonId === 1) return lesson1Exercises
   if (lessonId === 2) return lesson2Exercises
   if (lessonId === 3) return lesson3Exercises
+  if (lessonId === 4) return lesson4Exercises
+  if (lessonId === 5) return lesson5Exercises
   return []
 }

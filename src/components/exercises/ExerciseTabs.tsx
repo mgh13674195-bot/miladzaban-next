@@ -6,6 +6,7 @@ import ExerciseRenderer from './ExerciseRenderer'
 const SKILL_TAB_ORDER: { skill: ExerciseSkill; label: string }[] = [
   { skill: 'vocabulary', label: 'واژگان' },
   { skill: 'grammar', label: 'گرامر' },
+  { skill: 'pronunciation', label: 'تلفظ' },
   { skill: 'speaking', label: 'مکالمه' },
   { skill: 'writing', label: 'نوشتن' },
   { skill: 'review', label: 'آزمون' },
