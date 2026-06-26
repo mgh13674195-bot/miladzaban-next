@@ -7,6 +7,7 @@ import { lesson6Notes } from './lesson6Notes'
 import { lesson7Notes } from './lesson7Notes'
 import { lesson8Notes } from './lesson8Notes'
 import { lesson9Notes } from './lesson9Notes'
+import { lesson10Notes } from './lesson10Notes'
 
 /**
  * A2.1 — Lektion 1: Berufe und Familie
@@ -386,5 +387,6 @@ export function getLessonNotes(lessonId: number): LessonNotes | null {
   if (lessonId === 7) return lesson7Notes
   if (lessonId === 8) return lesson8Notes
   if (lessonId === 9) return lesson9Notes
+  if (lessonId === 10) return lesson10Notes
   return null
 }

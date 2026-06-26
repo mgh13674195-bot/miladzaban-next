@@ -7,6 +7,7 @@ import { lesson6Exercises } from './lesson6Exercises'
 import { lesson7Exercises } from './lesson7Exercises'
 import { lesson8Exercises } from './lesson8Exercises'
 import { lesson9Exercises } from './lesson9Exercises'
+import { lesson10Exercises } from './lesson10Exercises'
 
 /**
  * A2.1 — Lektion 1: Familie, Berufe, Kindheit, Possessivartikel, Perfekt
@@ -228,5 +229,6 @@ export function getExercisesForLesson(lessonId: number): Exercise[] {
   if (lessonId === 7) return lesson7Exercises
   if (lessonId === 8) return lesson8Exercises
   if (lessonId === 9) return lesson9Exercises
+  if (lessonId === 10) return lesson10Exercises
   return []
 }
