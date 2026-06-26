@@ -24,7 +24,7 @@ export default function A2LessonCard({ lesson }: { lesson: A2Lesson }) {
       {/* Info */}
       <div className="flex-1 min-w-0">
         <span className="badge badge-gray text-[10px] px-2 py-0.5 mb-1 inline-block">{lesson.topic}</span>
-        <p className="de font-bold text-sm truncate">{lesson.title}</p>
+        <p className="de-block font-bold text-sm truncate">{lesson.title}</p>
         <p className="text-xs text-ink-soft mt-0.5">
           {lesson.duration} · {toPersianDigits(coursebookCount)} ویدیوی کتاب درسی + {toPersianDigits(workbookCount)} ویدیوی کتاب کار
         </p>
