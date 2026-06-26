@@ -9,7 +9,9 @@ import { courses } from '@/data/courses'
 interface Props { params: { level: string } }
 
 export function generateStaticParams() {
-  return courses.map((c) => ({ level: c.id }))
+  // 'a2' has its own dedicated page at app/courses/a2/page.tsx — excluding it
+  // here avoids two competing pre-rendered pages for the same /courses/a2 path.
+  return courses.filter((c) => c.id !== 'a2').map((c) => ({ level: c.id }))
 }
 
 export default function CoursePage({ params }: Props) {
